@@ -4,6 +4,21 @@ public class ContoCorrente{
 	private String nome;
 	private String cognome;
 	private String id;
+	public final String nomeBanca="BNL";
+
+
+
+
+	public ContoCorrente(String n,String c,double s)
+	{
+
+
+			nome=n;
+			cognome=c;
+			saldo=s;
+
+	}
+
 
 	/**
 	*
