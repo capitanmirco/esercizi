@@ -9,6 +9,8 @@ public class Impiegato
 
 
 
+
+
 		
 		{
 
@@ -21,10 +23,32 @@ public class Impiegato
 				this.nome=nome;
 
 		}
+		public String getNome()
+		{
+				return this.nome;
+
+		}
+
 
 		public static int getContatore()
 		{
+
 			return contatore;
+
+		}
+
+		public static void main(String[] args) 
+		{
+
+
+				Impiegato x=new Impiegato();
+
+
+
+				x.setNome(args[0]);
+			
+				System.out.println(x.getNome());
+
 		}
 
 }
