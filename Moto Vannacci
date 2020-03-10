@@ -1,0 +1,32 @@
+package it.elis.java;
+
+public class Moto extends Veicolo{
+	private String colore;
+	private int luci;
+	
+	public Moto(String nome, String marca, double cilindrata, String colore, int luci) {
+		super(nome, marca, cilindrata);
+		setColore(colore);
+		setLuci(luci);
+	}
+
+	public int getLuci() {
+		return luci;
+	}
+
+	public String getColore() {
+		return colore;
+	}
+
+	public void setLuci(int luci) {
+		this.luci = luci;
+	}
+
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+	
+	public String toString() {
+		return super.toString() + " " + getLuci() + " " + getColore();
+	}
+}
