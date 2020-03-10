@@ -1,0 +1,9 @@
+Creare progetto Esercizio Autostrada
+Creare package it.elis.java
+Creare una supercalsse Veicolo, Attr: nome, marca, cilindrata, 
+Tre sotto classi Automobile, Moto, Camion che ereditano da Veicolo, aggiungere 2 attributi
+creare un main chiamato Autostrada che contiene un Arraylist di Veicoli.
+creare un metodo entraInAutostrada e un metodo esciDaAutostrada,
+creare un metodo che stampi le automobili presenti in autostrada, 
+creare un metodo che stampi le moto presenti in autostrada,
+creare un metodo che stampi i camion presenti in autostrada,
