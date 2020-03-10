@@ -1,0 +1,34 @@
+package it.elis.java;
+
+public class Automobile extends Veicolo{
+	private int posti;
+	private int luci;
+	
+	public Automobile(String nome, String marca, double cilindrata, int posti, int luci) {
+		super(nome, marca, cilindrata);
+		setPosti(posti);
+		setLuci(luci);
+	}
+
+	public int getPosti() {
+		return posti;
+	}
+
+	public int getLuci() {
+		return luci;
+	}
+
+	public void setPosti(int posti) {
+		this.posti = posti;
+	}
+
+	public void setLuci(int luci) {
+		this.luci = luci;
+	}
+	
+	public String toString() {
+		return super.toString() + " " + getPosti() + " " + getLuci();
+	}	
+}
+
+
