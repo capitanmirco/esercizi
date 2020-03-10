@@ -1,0 +1,19 @@
+Gestione di un’assicurazione
+Testo:
+Un’assicurazione desidera creare un archivio elettronico in grado di raccogliere
+informazioni sulle automobili e sui loro proprietari. Si implementi una classe
+Cliente, avente il nominativo (stringa) come variabile d’istanza; una classe
+Automobile avente come variabili d’istanza il numero di targa della vettura
+(intero) e un riferimento al proprietario della classe Cliente. La classe
+Archivio presenta due variabili di istanza ArrayList<Cliente> clienti e
+ArrayList<Automobile> automobili. Dotare la classe Archivio dei seguenti metodi:
+addCliente(String unNome)che aggiunge un nuovo cliente all’arraylist clienti.
+addAutomobile(int unaTarga, String unNome) che aggiunge una nuova auto
+all’arraylist automobili. removeAutomobile(int unaTarga) che rimuove un
+automobile dall’arraylist automobili. clienteTarga(int unaTarga) che restituisce 
+il nome del proprietario di una targa. returnTarga(String unNome) che
+Restituisce una lista con le targhe delle automobili aventi un dato
+proprietario. contaAuto(String unNome) che conta quante automobili sono
+associate a un cliente. removeCliente(String unNome) che toglie un cliente
+dall'arraylist clienti e le sue auto dall'arraylist automobili. maxAuto() che
+restituisce il cliente con il maggior numero di auto.
