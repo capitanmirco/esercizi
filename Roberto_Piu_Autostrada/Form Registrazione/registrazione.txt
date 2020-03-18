@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="/Registrazione/provaservlet" method="post">
+	<input type="text" name="nome" placeholder="nome">
+	<input type="text" name="cognome" placeholder="cognome">
+	<input type="text" name="eta" placeholder="eta">
+	<input type="text" name="citta" placeholder="città">
+	<input type="text" name="via" placeholder="via">
+	<input type="text" name="email" placeholder="e-mail">
+	<input type="submit">
+</form>
+
+</body>
+</html>
