@@ -1,0 +1,73 @@
+package it.food.java;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import it.food.java.Ordine;
+
+
+
+
+/**
+ * Servlet implementation class RaccogliInfo
+ */
+@WebServlet(name= "raccogliInfo", urlPatterns = {"/raccogliinfo"})
+public class RaccogliInfo extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private ArrayList <String> decisioniUtente = new ArrayList <String>();
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public RaccogliInfo() {
+		super();
+
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+			String servizio = request.getParameter("servizio");
+			String cucina = request.getParameter("cucina");
+			String pagamento = request.getParameter("pagamento");
+			
+			HttpSession ses = request.getSession();
+			decisioniUtente= (ArrayList<String>)ses.getAttribute("listadecisioni");
+
+
+			//response.sendRedirect("");
+			if (decisioniUtente.size() < 3) {
+				decisioniUtente.add(servizio);
+				decisioniUtente.add(cucina);
+				decisioniUtente.add(pagamento);
+			}else {
+				decisioniUtente.clear();
+				decisioniUtente.add(servizio);
+				decisioniUtente.add(cucina);
+				decisioniUtente.add(pagamento);
+				
+			}
+			for (int i = 0; i < decisioniUtente.size(); i++ ) {
+				System.out.println(decisioniUtente.get(i)+" ");
+
+			}
+			
+			ses.setAttribute("listadecisioni", decisioniUtente);
+		
+	}
+
+
+
+
+
+}
