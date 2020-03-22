@@ -1,0 +1,49 @@
+package it.food.java;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Dspatcher
+ */
+@WebServlet("/Dspatcher")
+public class Dspatcher extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Dspatcher() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		if (request.getParameter("servizio") != null && request.getParameter("cucina") != null && 
+			request.getParameter("pagamento")!= null) {
+		request.getServletContext().getNamedDispatcher("raccogliInfo").include(request, response);
+		} else if  (request.getParameter("elemento") != null ) {
+		request.getServletContext().getNamedDispatcher("delete").include(request,response);
+		} else {
+			request.getSession().setAttribute("listadecisioni", new ArrayList<String>());
+		}
+		request.getServletContext().getRequestDispatcher("/jsp/todo.jsp").include(request, response);
+		
+		
+		
+	}
+
+
+
+}
