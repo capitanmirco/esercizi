@@ -33,7 +33,7 @@ public class delete extends HttpServlet {
 		ArrayList <String> decisioniUtente = (ArrayList <String>) s.getAttribute("listadecisioni");
 		
 		int index = Integer.parseInt(i);
-		decisioniUtente.remove(i);
+		decisioniUtente.remove(index);
 		
 		s.setAttribute("listadecisioni",decisioniUtente);
 		
