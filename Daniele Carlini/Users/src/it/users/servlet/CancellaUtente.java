@@ -45,13 +45,13 @@ public class CancellaUtente extends HttpServlet {
 		if(session.getAttribute("listaUtenti") != null) {
 			ArrayList<Utente> listautenti;
 			try {
-				listautenti = db.readUtente();
+				//listautenti = db.readUtente();
 				int idUtente = Integer.parseInt((String) session.getAttribute("email_cancellare")); 
 				//System.out.println(db.emailUtente(idUtente));
 				db.cancellaUtente(db.emailUtente(idUtente));
 				//System.out.println("utenti cancellati");
 				session.removeAttribute("email_cancellare");
-				//listautenti = db.readUtente();
+				listautenti = db.readUtente();
 				session.setAttribute("listaUtenti", listautenti);
 				response.sendRedirect("visualizzadatabase");
 			} catch (SQLException e1) {
