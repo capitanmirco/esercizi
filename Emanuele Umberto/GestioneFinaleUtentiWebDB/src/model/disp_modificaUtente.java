@@ -36,11 +36,14 @@ public class disp_modificaUtente extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
+		Integer id = Integer.parseInt(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
 		String citta = request.getParameter("citta");
 		String telefono = request.getParameter("telefono");
+		
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		
 		Utente u = new Utente();
 		u.setUtenteId(id);
@@ -48,6 +51,12 @@ public class disp_modificaUtente extends HttpServlet {
 		u.setCognome(cognome);
 		u.setCitta(citta);
 		u.setTelefono(telefono);
+		
+		Account a = new Account();
+		a.setEmail(email);
+		a.setPassword(password);
+		
+		u.setAccount(a);
 		
 		
 		em.getTransaction().begin();

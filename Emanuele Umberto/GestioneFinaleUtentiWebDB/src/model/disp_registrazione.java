@@ -32,11 +32,20 @@ public class disp_registrazione extends HttpServlet {
 		String citta = request.getParameter("citta");
 		String telefono = request.getParameter("telefono");
 		
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
 		Utente u = new Utente();
 		u.setNome(nome);
 		u.setCognome(cognome);
 		u.setCitta(citta);
 		u.setTelefono(telefono);
+		
+		Account a = new Account();
+		a.setEmail(email);
+		a.setPassword(password);
+		
+		u.setAccount(a);
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestioneFinaleUtentiWebDB");
 		EntityManager em = emf.createEntityManager();

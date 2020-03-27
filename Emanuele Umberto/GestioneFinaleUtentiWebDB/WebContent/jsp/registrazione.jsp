@@ -25,6 +25,14 @@
 	    <label for="exampleInputPassword1">Telefono</label>
 	    <input type="text" name="telefono" class="form-control" id="exampleInputPassword1" value="<%= m != null ? m.getTelefono() : "" %>">
 	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Email</label>
+	    <input type="email" name="email" class="form-control" id="exampleInputPassword1" value="<%= m != null ? m.getAccount().getEmail() : "" %>">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Password</label>
+	    <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="<%= m != null ? m.getAccount().getPassword() : "" %>">
+	  </div>
 	  <button type="submit" class="btn btn-primary">Invia</button>
 	</form>
 	<% if(request.getAttribute("ok") != null) { 

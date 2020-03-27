@@ -14,17 +14,19 @@ public class Utente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id_utente")
 	private int utenteId;
-	
 	private String nome;
-	
 	private String cognome;
-
 	private String citta;
-	
 	private String telefono;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "accountId")
+	private Account account;
 
+	
 	public int getUtenteId() {
 		return utenteId;
 	}
@@ -63,6 +65,14 @@ public class Utente implements Serializable {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	
