@@ -36,7 +36,8 @@ public class OperazioniCrud extends HttpServlet {
 			List<User> lista = getAllUser();
 			request.setAttribute("lista", lista);
 			request.getServletContext().getNamedDispatcher("visualizzalista").forward(request, response);
-		} else if(request.getParameter("call") != null && request.getParameter("call").equals("mod")) {
+		} 
+		if(request.getParameter("call") != null && request.getParameter("call").equals("mod")) {
 			User u = getUser(Integer.parseInt(request.getParameter("id")));
 			request.setAttribute("utente", u);
 			request.getServletContext().getNamedDispatcher("modificautente").forward(request, response);
